@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AgileCards"
+             x:Class="AgileCards.MainPage">
+    <StackLayout>
+        <Label Text="DiUS" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+        <StackLayout BackgroundColor="Beige" Padding="0,10,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Card Number"
+                   HorizontalOptions="Fill"/>
+                <Label x:Name="LabelCardNumber"                   
+                   HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Title"
+                   HorizontalOptions="Fill"/>
+                <Entry x:Name="EntryTitle"                   
+                   HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Description"
+                   HorizontalOptions="Fill"/>
+                <Entry x:Name="EntryDescription"                   
+                   HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Estimate"
+                   HorizontalOptions="Fill"/>
+                <Entry x:Name="EntryEstimate"  
+                   Keyboard="Numeric"
+                   HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>                     
+        <Button Text="Create Card" 
+            x:Name="ButtonCreate"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Clicked="OnCreateButtonClicked" />         
+        <StackLayout Orientation="Horizontal"
+                     BackgroundColor="LightGray">
+            <Label Text="Start" 
+                   HorizontalOptions="Center"/>
+            <Label x:Name="LabelStart"
+                   HorizontalTextAlignment="Start"
+                   HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     BackgroundColor="LightGray">
+            <Label Text="Progress" 
+                    HorizontalOptions="Center"/>
+            <Label x:Name="LabelProgress"
+                   HorizontalTextAlignment="Start"
+                   HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     BackgroundColor="LightGray">
+            <Label Text="End" 
+                   HorizontalOptions="Center"/>
+            <Label x:Name="LabelEnd"
+                   HorizontalTextAlignment="Start"
+                   HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Card To Move"
+                   HorizontalOptions="Fill"/>
+            <Entry x:Name="EntryCardToMove"
+                   Keyboard="Numeric"
+                   HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Move To Column"
+                   HorizontalOptions="Fill"/>
+            <Picker x:Name="PickerMoveToColumn"
+                   HorizontalOptions="FillAndExpand">
+                <Picker.Items>                    
+                    <x:String>Progress</x:String>
+                    <x:String>End</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center">           
+            <Button Text="Undo Move"
+            x:Name="ButtonUndo"
+            VerticalOptions="Center" 
+           HorizontalOptions="Center"
+           Clicked="OnUndoButtonClicked"/>
+            <Button Text="Move Next" 
+            x:Name="ButtonNext"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Clicked="OnNextButtonClicked" />
+        </StackLayout>
+        <Button Text="Calculate Velocity"
+            x:Name="ButtonVelocity"
+            VerticalOptions="Center" 
+           HorizontalOptions="Center"
+           Clicked="OnCalculateVelocityButtonClicked"/>
+    </StackLayout>
+</ContentPage>
